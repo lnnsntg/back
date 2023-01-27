@@ -1,4 +1,21 @@
 // const routes = [require("./getRoutes"), require("./postRoutes")];
-const routes = ["./getRoutes", "./postRoutes"].map(require);
+const router = ["./getRoutes", "./postRoutes"].map(require);
 
-module.exports = { routes };
+module.exports = { router };
+
+
+// Proporcionado por Chat GPT
+
+/* 
+const fs = require('fs');
+const router = require('express').Router();
+
+fs.readdirSync('./routes').forEach((file) => {
+  if (file.endsWith('.js')) {
+    const route = require(`./routes/${file}`);
+    router.use(route);
+  }
+});
+
+module.exports = router;
+*/

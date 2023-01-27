@@ -1,12 +1,15 @@
 const express = require("express");
 const app = express();
-const { routes } = require("./router");
+const { router } = require("./router");
 require("dotenv").config();
-// require("./db");
+require("./db");
+const User = require("./models/User");
+const { Router } = require("express");
+
 
 const port = process.env.PORT || 8000;
 
-app.use(routes);
+app.use(router);
 
 app.listen(port, () => {
   console.log(`The application is running on localhost ${port}`);
